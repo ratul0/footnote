@@ -1,0 +1,38 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="page-header">
+			<h2>{{ pageTitle }}</h2>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/><br/>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br/><br/><br/>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div class="col-md-6">
+		<form name="contactForm" ng-submit="doContact(newContact)" novalidate>
+			<div class="form-group">
+				<label for="name">Name *</label>
+				<input type="text" id="name" name="name" ng-model="newContact.name" class="form-control" autofocus required>
+
+				<p class="help-block text-danger" ng-show="contactForm.name.$dirty && contactForm.name.$error.required">This field is required</p>
+			</div>
+
+			<div class="form-group">
+				<label for="email">Email Address *</label>
+				<input type="email" id="email" name="email" ng-model="newContact.email" class="form-control" required>
+
+				<p class="help-block text-danger" ng-show="contactForm.email.$dirty && contactForm.email.$error.required">This field is required</p>
+				<p class="help-block text-danger" ng-show="contactForm.email.$dirty && contactForm.email.$error.email">Enter a valid email address</p>
+			</div>
+
+			<div class="form-group">
+				<label for="message">Message *</label>
+				<textarea type="text" id="message" name="message" ng-model="newContact.message" class="form-control" rows="7" required></textarea>
+
+				<p class="help-block text-danger" ng-show="contactForm.message.$dirty && contactForm.message.$error.required">This field is required</p>
+			</div>
+
+			<br/>
+			<button class="btn btn-lg btn-success btn-block" ng-disabled="contactForm.$invalid">Contact</button>
+		</form>
+	</div>
+</div>

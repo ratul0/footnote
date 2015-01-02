@@ -1,0 +1,17 @@
+<div class="list-group text-center">
+	<a href="{{ URL::route('dashboard') }}" class="list-group-item {{ Helper::setActive('dashboard') }}"  rel="tooltip" data-placement="right" title="Dashboard"><span class="fa fa-home fa-2x"></span></a>
+	<a href="{{ URL::route('profile') }}" class="list-group-item {{ Helper::setActive('profile') }}" rel="tooltip" data-placement="right" title="Profile"><span class="fa fa-user fa-2x"></a>
+	@if($role->view_issue)
+		<a href="{{ URL::route('issues') }}" class="list-group-item {{ Helper::setActive('issues') }}" rel="tooltip" data-placement="right" title="Issues"><span class="fa fa-th-list fa-2x"></a>
+	@endif
+
+	@if($role->crud_manager)
+		<a href="{{ URL::route('managers') }}" class="list-group-item {{ Helper::setActive('users') }}" rel="tooltip" data-placement="right" title="Users"><span class="fa fa-users fa-2x"></a>
+	@elseif($role->crud_developer)
+		<a href="{{ URL::route('developers') }}" class="list-group-item {{ Helper::setActive('users') }}" rel="tooltip" data-placement="right" title="Users"><span class="fa fa-users fa-2x"></a>
+	@elseif($role->crud_supporter)
+		<a href="{{ URL::route('supporters') }}" class="list-group-item {{ Helper::setActive('users') }}" rel="tooltip" data-placement="right" title="Users"><span class="fa fa-users fa-2x"></a>
+	@elseif($role->crud_client)
+		<a href="{{ URL::route('clients') }}" class="list-group-item {{ Helper::setActive('users') }}" rel="tooltip" data-placement="right" title="Users"><span class="fa fa-users fa-2x"></a>
+	@endif
+</div>

@@ -1,0 +1,25 @@
+body
+{
+	padding-top: 60px;
+}
+.page-header
+{
+	margin: 10px 0 20px;
+}
+pre.newlineToBr
+{
+	padding: 0px;
+	margin: 0px; 
+	font-size: 14px;
+	/* word-break: break-all; */
+	word-wrap: break-word;
+	background-color: #fff; 
+	border: none; 
+	border-radius: 0px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.text-danger
+{
+	color: #a94442;
+}

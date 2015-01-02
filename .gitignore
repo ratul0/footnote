@@ -1,0 +1,8 @@
+api/bootstrap/compiled.php
+api/vendor
+api/.env.*.php
+api/.env.php
+.DS_Store
+api/Thumbs.db
+api/composer.lock
+
