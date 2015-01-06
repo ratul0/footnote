@@ -5,7 +5,7 @@ app.controller('LoginCtrl', ['$scope', 'NotifyService', 'AuthService', '$locatio
     	AuthService.login(account)
     		.success(function(response) {
 	    		NotifyService.success(response.msg);
-	    		$location.path('/');
+	    		$location.path('/home');
 	    	})
 	    	.error(function(response) {
 	    		NotifyService.error(response.msg);

@@ -1,7 +1,12 @@
 app.config(['$routeProvider',function($routeProvider) {
 	$routeProvider
 		.when('/', {
-			templateUrl : 'partials/pages/home.html'
+			templateUrl : 'partials/pages/home.html',
+			controller : 'HomeCtrl'
+		})
+		.when('/home', {
+			templateUrl: "partials/user/home.html",
+			controller: "UserHomeCtrl"
 		})
 		.when('/contact', {
 			templateUrl : 'partials/pages/contact.html',

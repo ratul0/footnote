@@ -7,4 +7,6 @@ class DashboardController extends BaseController {
 		return View::make('dashboard')
 						->with('title', 'Dashboard');
 	}
+
+
 }

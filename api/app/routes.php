@@ -11,21 +11,23 @@
 |
 */
 
-Route::get('/', ['as'=>'index','uses' => 'PublicController@home']);
+Route::get('/', ['as' => 'index', 'uses' => 'PublicController@home']);
 
 Route::controller('password', 'RemindersController');
 
-Route::group(['before' => 'guest'], function (){
-	Route::get('login', ['as'=>'login','uses' => 'PublicController@login']);
+Route::group(['before' => 'guest'], function () {
+	Route::get('login', ['as' => 'login', 'uses' => 'PublicController@login']);
 	Route::post('login', array('uses' => 'PublicController@doLogin'));
 	Route::post('register', 'PublicController@doRegister');
 });
 
-Route::group(array('before' => 'auth'), function(){
+Route::group(array('before' => 'auth'), function () {
 	Route::get('logout', ['as' => 'logout', 'uses' => 'PublicController@logout']);
 	Route::get('dashboard', array('as' => 'dashboard', 'uses' => 'DashboardController@index'));
 });
 
 Route::get('current-user', 'PublicController@currentUser');
+
+
 
 
